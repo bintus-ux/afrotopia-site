@@ -1,10 +1,12 @@
 import NavBar from '../components/NavBar'
 import MainContent from '../components/MainContent'
+import SubHeader from '../components/SubHeader'
 
 export default function Home() {
   return (
     <div>
       <NavBar />
+      <SubHeader />
       <div className='w-full px-3 md:px-0 border-2 border-blue-600 border-solid'>
         <div id='about' className='w-full text-white h-screen'>
           <div>
