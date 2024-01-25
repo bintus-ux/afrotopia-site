@@ -2,7 +2,7 @@ import { MensWear, WomensWear } from './DropDown'
 
 const SubHeader = () => {
   return (
-    <div className='w-full mt-[150px] md:mt-[72px] mx-auto max-w-2xl flex justify-left items-left bg-white bg-opacity-75 p-2 z-50 xl:h-auto fixed border-r-2'>
+    <div className='w-full mt-[150px] h-[50px] md:mt-[72px] mx-auto max-w-2xl flex justify-left items-left bg-white bg-opacity-75 p-2 z-50 fixed border-r-2'>
       <ul className='relative h-auto w-full mx-auto text-xl text-black md:h-auto md:py-auto md:items-left md:justify-left md:flex gap-x-[50px] '>
         <li className='group relative cursor-pointer flex items-center  '>
           <MensWear />
