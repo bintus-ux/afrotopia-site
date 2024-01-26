@@ -49,7 +49,7 @@ const MainContent = () => {
               height={400}
               alt={`Image for ${item.headerText}`}
             />
-            <div className='border-2 border-solid border-red-500 xl:w-[700px] py-6'>
+            <div className='border-2 border-solid border-red-500 xl:w-[700px] py-6 md:px-3'>
               <h2 className='text-xl font-bold mb-2 text-black'>
                 {item.headerText}
               </h2>

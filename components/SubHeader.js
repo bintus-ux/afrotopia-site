@@ -7,7 +7,7 @@ const SubHeader = () => {
   return (
     <div>
       {!isSmallScreen && (
-        <div className='w-full mt-[150px] h-[50px] md:mt-[72px] mx-auto max-w-[700px] flex justify-left items-left bg-white bg-opacity-75 px-[30px] z-50 fixed border-r-2'>
+        <div className='w-full mt-[150px] h-[50px] md:mt-[72px] mx-auto max-w-[700px] flex justify-left items-left bg-white bg-opacity-75 px-[30px] z-50 fixed border-r-2 border-b-4'>
           <ul className='relative h-auto w-full mx-auto text-xl text-black md:h-auto md:py-auto md:items-left md:justify-left md:flex gap-x-[50px] '>
             <li className='flex items-center cursor-pointer'>
               <MensWear />
