@@ -51,7 +51,7 @@ export const MensWear = () => {
         />
       </svg>
       {isDropdownOpen && (
-        <div className='w-[350px] p-3 py-5 absolute top-[34px] bg-white text-black bg-opacity-75 shadow-md transition-all duration-500 ease-in-out mt-2'>
+        <div className='w-[350px] p-3 py-5 absolute top-[38px] bg-white text-black bg-opacity-75 shadow-md transition-all duration-500 ease-in-out mt-2'>
           <div className='flex justify-center text-start items-center gap-2 mb-2'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -259,7 +259,7 @@ export const WomensWear = () => {
         />
       </svg>
       {isDropdownOpen && (
-        <div className='w-[350px] p-3 py-5 absolute left-[50px] top-[34px] bg-white text-black bg-opacity-75 shadow-md transition-all duration-500 ease-in-out mt-2'>
+        <div className='w-[350px] p-3 py-5 absolute left-[50px] top-[38px] bg-white text-black bg-opacity-75 shadow-md transition-all duration-500 ease-in-out mt-2'>
           <div className='flex justify-center text-start items-center gap-2 mb-2'>
             <svg
               xmlns='http://www.w3.org/2000/svg'

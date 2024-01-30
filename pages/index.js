@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       <NavBar />
       <SubHeader />
-      <div className='w-full px-3 md:px-0 border-2 border-blue-600 border-solid'>
+      <div className='w-full px-3 md:px-0'>
         <div id='about' className='w-full text-white h-auto'>
           <div>
             <div className='mt-[100px] md:mt-[150px] mx-auto max-w-6xl flex justify-between items-center border-2 border-red-600 border-solid'>
