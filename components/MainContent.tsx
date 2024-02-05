@@ -41,7 +41,7 @@ const MainContent = () => {
         <>
           <div
             key={item._id}
-            className={`mt-5 mx-auto max-w-6xl flex flex-col justify-between items-center border-2 border-red-600 border-solid ${
+            className={`mt-5 mx-auto max-w-6xl flex flex-col justify-between items-center  ${
               item._id % 2 === 0 ? 'md:md:flex-row-reverse' : 'md:flex-row'
             }`}>
             <Image
@@ -50,7 +50,7 @@ const MainContent = () => {
               height={400}
               alt={`Image for ${item.headerText}`}
             />
-            <div className='border-2 border-solid border-red-500 xl:w-[700px] py-6 md:px-3'>
+            <div className=' xl:w-[700px] py-6 md:px-3'>
               <h2 className='text-xl font-bold mb-2 text-black'>
                 {item.headerText}
               </h2>

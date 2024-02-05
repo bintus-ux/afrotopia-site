@@ -1,11 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { FiHeart } from 'react-icons/fi'
 import { GoLock } from 'react-icons/go'
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
+const router = useRouter();
+
+const toAboutPage = () => {
+  router.push('/signupForm')
+} 
+
   return (
     <div>
       <nav className="w-full bg-black xl:h-auto fixed top-0 left-0 right-0 z-10">
@@ -62,7 +69,7 @@ function NavBar() {
                   </Link>
                 </li>
                 <li className="pb-6 text-xl text-white py-2 px-3 text-center md:py-2  border-b-2 md:border-b-0 group">
-                 <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-3 rounded flex items-center transition duration-300 ease-in-out">
+                 <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-3 rounded flex items-center transition duration-300 ease-in-out" onClick={toAboutPage}>
                    <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
