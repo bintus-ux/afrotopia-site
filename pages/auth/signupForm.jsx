@@ -3,7 +3,7 @@ import React from 'react'
 const about = () => {
   return (
     <div>
-      Hello dear
+      Signup Form
     </div>
   )
 }
