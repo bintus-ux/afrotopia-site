@@ -19,7 +19,7 @@ function NavBar() {
   return (
     <div>
       <nav className='w-full bg-black xl:h-auto fixed top-0 left-0 right-0 z-10'>
-        <div className='justify-between px-4 mx-auto lg:max-w-8xl md:items-center md:flex md:px-8'>
+        <div className='justify-between px-3 mx-auto lg:max-w-8xl md:items-center md:flex md:px-3'>
           <div>
             <div className='flex items-center justify-between py-3 md:py-5 md:block'>
               {/* LOGO */}
@@ -29,7 +29,7 @@ function NavBar() {
               {/* HAMBURGER BUTTON FOR MOBILE */}
               <div className='md:hidden'>
                 <button
-                  className='p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border'
+                  className=' text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border'
                   onClick={() => setNavbar(!navbar)}>
                   {navbar ? (
                     <Image src='/close.svg' width={30} height={30} alt='logo' />
@@ -115,7 +115,7 @@ function NavBar() {
                     </button>
                   </li>
                 ) : (
-                  <li className='pb-6 text-xl text-white py-2 px-3 text-center md:py-2  border-b-2 md:border-b-0 group transition-all duration-200 ease-in-out'>
+                  <li className='pb-6 text-xl text-white py-2 px-3 text-center md:py-2 border-b-2 md:border-b-0 group transition-all duration-200 ease-in-out'>
                     <button
                       className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-3 rounded flex items-center transition duration-300 ease-in-out'
                       onClick={toSignupPage}>
@@ -189,7 +189,7 @@ function NavBar() {
                     </button>
                   </li>
                 ) : (
-                  <li className='pb-6 text-xl text-white py-2 px-3 text-center md:py-2  border-b-2 md:border-b-0 group'>
+                  <li className='pb-6 text-xl text-white py-2 px-0 text-center md:py-2  border-b-2 md:border-b-0 group'>
                     <button
                       className='flex items-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-3 rounded transition duration-300 ease-in-out'
                       onClick={toLoginPage}>

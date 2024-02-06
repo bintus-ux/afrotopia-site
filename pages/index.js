@@ -10,7 +10,7 @@ export default function Home() {
       <div className='w-full px-3 md:px-0 '>
         <div id='about' className='w-full text-white h-auto'>
           <div>
-            <div className='mb-[40px] mt-[100px] md:mt-[150px] mx-auto max-w-6xl flex justify-between items-center'>
+            <div className='mb-[40px] mt-[100px] md:px-3 xl:px-0 md:mt-[150px] mx-auto max-w-6xl flex justify-between items-center'>
               <h1 className='font-inter text-xl text-purple-600 font-bold'>
                 The Afrotopia Edit
               </h1>
