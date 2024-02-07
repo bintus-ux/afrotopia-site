@@ -152,9 +152,9 @@ const MainContent = () => {
               </h2>
               <p className='text-gray-700'>{item.text}</p>
               <div className='mt-5 md:mt-[100px]'>
-                <button class='px-4 py-2 bg-cyan-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden transform hover:scale-105 fade_up'>
-                  <span class='relative z-10'>Check slides</span>
-                  <span class='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-500 via-transparent to-transparent mix-blend-multiply'></span>
+                <button className='px-4 py-2 bg-cyan-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden transform hover:scale-105 fade_up'>
+                  <span className='relative z-10'>Check slides</span>
+                  <span className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-500 via-transparent to-transparent mix-blend-multiply'></span>
                 </button>
 
                 <button className='ml-2 bg-gray-300 text-gray-800 px-4 py-2 rounded-md hover:bg-gray-400 fade_up1'>

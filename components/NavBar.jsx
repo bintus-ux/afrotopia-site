@@ -1,19 +1,45 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { supabase } from '../supabaseClient'
+import Avatar from './Avatar'
 import { FiHeart } from 'react-icons/fi'
 import { GoLock } from 'react-icons/go'
 
 function NavBar() {
   const [navbar, setNavbar] = useState(false)
+  const [user, setUser] = useState(null)
   const router = useRouter()
 
+  // CHECKING FOR IF USER IS LOGGED IN
+  useEffect(() => {
+    const getUserProfile = async () => {
+      const user = supabase.auth.getUser() // Check if user is logged in
+      setUser(user)
+    }
+
+    getUserProfile()
+  }, [])
+
   const toSignupPage = () => {
-    router.push('/auth/signupForm')
+    router.push('/auth/signup')
   }
   const toLoginPage = () => {
-    router.push('/auth/loginForm')
+    router.push('/auth/signin')
+  }
+
+  // LOG OUT FUNCTION
+  const handleLogout = async () => {
+    try {
+      await supabase.auth.signOut() // Call the signOut method
+      setUser(null) // Set user state to null
+      router.push('/') // Redirect to the home page or any other desired page
+    } catch (error) {
+      console.error('Error logging out:', error.message)
+    }
   }
 
   return (
@@ -114,6 +140,23 @@ function NavBar() {
                       </svg>
                     </button>
                   </li>
+                ) : user ? (
+                  <li className='pb-6 text-xl text-white py-2 px-2 text-center md:py-2  border-b-2 md:border-b-0 group'>
+                    <button
+                      className='flex justify-between gap-x-2  items-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-5 rounded transition duration-300 ease-in-out'
+                      onClick={toLoginPage}>
+                      <div className='flex items-center justify-center'>
+                        <Avatar
+                          src='/images/dylan.png'
+                          alt='Avatar'
+                          borderColor='cyan-600'
+                        />
+                      </div>
+                      <span className='transition duration-300 ease-in-out'>
+                        Profile
+                      </span>
+                    </button>
+                  </li>
                 ) : (
                   <li className='pb-6 text-xl text-white py-2 px-3 text-center md:py-2 border-b-2 md:border-b-0 group transition-all duration-200 ease-in-out'>
                     <button
@@ -156,7 +199,7 @@ function NavBar() {
                   <li className='pb-6 text-xl text-white py-2 px-3 text-center md:py-2  border-b-2 md:border-b-0 group'>
                     <button
                       className='flex justify-center items-center w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-3 rounded transition duration-300 ease-in-out'
-                      onClick={toLoginPage}>
+                      onClick={toProfilePage}>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
@@ -184,6 +227,44 @@ function NavBar() {
                           stroke-linecap='round'
                           stroke-linejoin='round'
                           d='M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z'
+                        />
+                      </svg>
+                    </button>
+                  </li>
+                ) : user ? (
+                  <li className='pb-6 text-xl text-white py-2 px-3 text-center md:py-2 border-b-2 md:border-b-0 group transition-all duration-200 ease-in-out'>
+                    <button
+                      className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-3 rounded flex items-center transition duration-300 ease-in-out'
+                      onClick={handleLogout}>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        className='w-6 h-6 mr-2'>
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M9 5l7 7-7 7'
+                        />
+                      </svg>
+                      <span className='transition duration-300 ease-in-out'>
+                        Log out
+                      </span>
+
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='1.5'
+                        stroke='currentColor'
+                        class=' w-6 h-6 ml-2 hidden transition duration-200 ease-in-out
+                        group-hover:inline'>
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          d='M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25'
                         />
                       </svg>
                     </button>
