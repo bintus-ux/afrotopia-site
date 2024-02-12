@@ -24,6 +24,12 @@ function NavBar() {
     getUserProfile()
   }, [])
 
+  // To user profile page
+
+  const toProfilePage = () => {
+    // to profile
+  }
+
   const toSignupPage = () => {
     router.push('/auth/signup')
   }
