@@ -205,7 +205,7 @@ function NavBar() {
                   <li className='pb-6 text-xl text-white py-2 px-3 text-center md:py-2  border-b-2 md:border-b-0 group'>
                     <button
                       className='flex justify-center items-center w-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-3 rounded transition duration-300 ease-in-out'
-                      onClick={toProfilePage}>
+                      onClick={toLoginPage}>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
