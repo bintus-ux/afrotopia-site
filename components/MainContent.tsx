@@ -147,10 +147,15 @@ const MainContent = () => {
               alt={`Image for ${item.headerText}`}
             />
             <div className=' xl:w-[700px] py-6 md:px-3'>
-              <h2 className='text-[30px] font-bold mb-2 text-black py-5'>
-                {item.headerText}
-              </h2>
-              <p className='text-gray-700'>{item.text}</p>
+              <div
+                className={`${
+                  item._id % 2 === 0 ? 'fade_left' : 'fade_right'
+                }`}>
+                <h2 className='text-[30px] font-bold mb-2 text-black py-5'>
+                  {item.headerText}
+                </h2>
+                <p className='text-gray-700'>{item.text}</p>
+              </div>
               <div className='mt-5 md:mt-[100px]'>
                 <button className='px-4 py-2 bg-cyan-600 hover:shadow-2xl transition-all duration-300 relative overflow-hidden transform hover:scale-105 fade_up'>
                   <span className='relative z-10'>Check slides</span>
