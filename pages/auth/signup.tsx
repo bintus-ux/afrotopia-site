@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { supabase } from '../../supabaseClient'
 
-const SignUp = ({ hasNumber, hasValidLength, hasCapitalLetter }) => {
+const SignUp = () => {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [isValid, setIsValid] = useState(true)
@@ -156,15 +156,10 @@ const SignUp = ({ hasNumber, hasValidLength, hasCapitalLetter }) => {
                 <div key={index}>{hr}</div>
               ))}
             </div>
-            {password && ( // Check if password is not empty
-              <>
-                {!hasNumber ? (
-                  <span className='text-red-500'>Weak</span>
-                ) : (
-                  <span className='text-green-500'>Good</span>
-                )}
-                {hasNumber && <span className='text-green-500'>Good</span>}
-              </>
+            {/[A-Z]/.test(password) && /\d/.test(password) ? (
+              <span className='text-green-500'>Good</span>
+            ) : (
+              <span className='text-red-500'>Weak</span>
             )}
           </div>
 
